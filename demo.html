@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#father td {
+			width: 40px;
+			height: 40px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<table id="father">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<script>
+		var fath = document.querySelector('#father');
+		fath.addEventListener('click',function(event) {
+			var target = event.target;
+			if(target.tagName === 'TD') {
+				var getRandomColor = function() {    
+ 					return  '#' + (function(color) {    
+    						return (color +=  '0123456789abcdef'[Math.floor(Math.random()*16)]) && (color.length == 6) ?  color : arguments.callee(color);    
+  						})('');    
+				}
+				var col = getRandomColor();
+				target.style.background = col;
+			} else {
+				alert('father');
+			}
+		})
+	</script>
+</body>
+</html>
